@@ -6,14 +6,43 @@ using System.Text;
 
 namespace HumanRisksAssignment.Models
 {
-    class Threat
+    public class Threat
     {
         [Key]
-        public Guid Id { get; }
+        public Guid Id { get; set; }
         public string Title { get; set; }
-        [Range(0, 2, ErrorMessage = "No such Threat level")]
-        public int Level { get; set; }
+        [NotMapped]
+        private int _level;
+
+        [Range(0, 2)]
+        public int Level
+        {
+            get { return _level; }
+            set
+            {
+                if (value >= 0 && value <= 2)
+                {
+                    _level = value;
+                }
+                else
+                {
+                    // Some logging..
+                    Console.WriteLine($"Error: No threat level of {value}. Threat level set to default (0)");
+                    _level = 0;
+                }
+            }
+        }
+
         [ForeignKey("RiskAssessment")]
-        public string RiskAssessmentId { get; }
+        public Guid RiskAssessmentId { get; set; }
+        public RiskAssessment RiskAssessment { get; set; }
+
+        // Constructor
+        public Threat(string title, int level)
+        {
+            Title = title;
+            Level = level;
+        }
+
     }
 }

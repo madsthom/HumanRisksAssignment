@@ -6,14 +6,22 @@ using System.Text;
 
 namespace HumanRisksAssignment.Models
 {
-    class RiskAssessment
+    public class RiskAssessment
     {
         [Key]
         public Guid Id { get; set; }
+        [Required]
         public string Title { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public List<Threat> Threats { get; set; }
 
-        public List<Threat> Threats { get; }
+        public RiskAssessment(string title, double latitude, double longitude)
+        {
+            Title = title;
+            Latitude = latitude;
+            Longitude = longitude;
+            Threats = new List<Threat>();
+        }
     }
 }

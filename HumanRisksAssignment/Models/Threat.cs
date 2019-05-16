@@ -12,7 +12,7 @@ namespace HumanRisksAssignment.Models
         public Guid Id { get; set; }
         public string Title { get; set; }
         [NotMapped]
-        private int _level;
+        int _level;
 
         [Range(0, 2)]
         public int Level
@@ -26,7 +26,7 @@ namespace HumanRisksAssignment.Models
                 }
                 else
                 {
-                    // Some logging..
+                    // TODO: Add exception instead.
                     Console.WriteLine($"Error: No threat level of {value}. Threat level set to default (0)");
                     _level = 0;
                 }

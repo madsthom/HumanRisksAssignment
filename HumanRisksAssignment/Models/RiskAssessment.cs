@@ -2,18 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace HumanRisksAssignment.Models
 {
     public class RiskAssessment
     {
+        [NotMapped]
+        private double _latitude;
+        [NotMapped]
+        private double _longitude;
+
         [Key]
         public Guid Id { get; set; }
         [Required]
         public string Title { get; set; }
-
-        private double _latitude;
         public double Latitude
         {
             get { return _latitude; }
@@ -32,7 +36,6 @@ namespace HumanRisksAssignment.Models
             }
         }
 
-        private double _longitude;
         public double Longitude
         {
             get { return _longitude; }

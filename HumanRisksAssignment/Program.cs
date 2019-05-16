@@ -24,7 +24,8 @@ namespace HumanRisksAssignment
                     var t4 = new Threat("Threaty", 1);
                     var t5 = new Threat("Threat Of All Threats", 2);
 
-                    ra1.Threats.Add(t1); // Add Threats to RiskAssessment
+                    // Add Threats to RiskAssessment
+                    ra1.Threats.Add(t1);
                     ra1.Threats.Add(t2);
                     ra2.Threats.Add(t3);
                     ra2.Threats.Add(t4);
@@ -54,13 +55,11 @@ namespace HumanRisksAssignment
                 PrintRiskAssessments(raList);
 
                 var t6 = new Threat("A very new threat", 2);
-
                 raList[0].Threats.Add(t6);
 
                 PrintRiskAssessments(raList);
 
                 db.SaveChanges();
-
             }
         }
 

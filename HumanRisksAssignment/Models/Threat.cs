@@ -8,12 +8,13 @@ namespace HumanRisksAssignment.Models
 {
     public class Threat
     {
-        [Key]
-        public Guid Id { get; set; }
-        public string Title { get; set; }
         [NotMapped]
         int _level;
 
+        [Key]
+        public Guid Id { get; set; }
+        [Required]
+        public string Title { get; set; }
         [Range(0, 2)]
         public int Level
         {

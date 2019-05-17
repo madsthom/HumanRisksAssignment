@@ -37,9 +37,10 @@ namespace HumanRisksAssignment
                 }
             }
 
+            // TODO: Make Accessor classes
             using (var db = new RiskAssessmentContext())
             {
-                // Fetch RiskAssessments from db including Threats
+                // Fetch RiskAssessments from db
                 var raList = db.RiskAssessments.Include(r => r.Threats).ToList();
 
                 PrintRiskAssessments(raList);

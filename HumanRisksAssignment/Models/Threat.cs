@@ -9,7 +9,7 @@ namespace HumanRisksAssignment.Models
     public class Threat
     {
         [NotMapped]
-        int _level;
+        private int _level;
 
         [Key]
         public Guid Id { get; set; }
@@ -18,7 +18,7 @@ namespace HumanRisksAssignment.Models
         [Range(0, 2)]
         public int Level
         {
-            get { return _level; }
+            get => _level;
             set
             {
                 if (value >= 0 && value <= 2)
@@ -27,14 +27,13 @@ namespace HumanRisksAssignment.Models
                 }
                 else
                 {
-                    // TODO: Add exception instead.
+                    // TODO: Handle exception instead.
                     Console.WriteLine($"Error: No threat level of {value}. Threat level set to default (0)");
                     _level = 0;
                 }
             }
         }
 
-        [ForeignKey("RiskAssessment")]
         public Guid RiskAssessmentId { get; set; }
         public RiskAssessment RiskAssessment { get; set; }
 

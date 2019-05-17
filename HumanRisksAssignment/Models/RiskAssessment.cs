@@ -20,7 +20,7 @@ namespace HumanRisksAssignment.Models
         public string Title { get; set; }
         public double Latitude
         {
-            get { return _latitude; }
+            get => _latitude;
             set
             {
                 if (value >= -90 && value <= 90)
@@ -29,7 +29,7 @@ namespace HumanRisksAssignment.Models
                 }
                 else
                 {
-                    // TODO: Add exception instead.
+                    // TODO: Handle exception instead.
                     Console.WriteLine($"Error: No such latitude value: {value}");
                     _latitude = 0;
                 }
@@ -38,7 +38,7 @@ namespace HumanRisksAssignment.Models
 
         public double Longitude
         {
-            get { return _longitude; }
+            get => _longitude;
             set
             {
                 if (value >= -180.0 && value <= 180.0)
@@ -47,8 +47,8 @@ namespace HumanRisksAssignment.Models
                 }
                 else
                 {
-                    // TODO: Add exception instead.
-                    Console.WriteLine($"Error: No such latitude value: {value}");
+                    // TODO: Handle exception instead.
+                    Console.WriteLine($"Error: No such longitude value: {value}");
                     _longitude = 0;
                 }
             }

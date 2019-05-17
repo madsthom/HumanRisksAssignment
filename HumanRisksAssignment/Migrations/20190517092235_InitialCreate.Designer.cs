@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HumanRisksAssignment.Migrations
 {
     [DbContext(typeof(RiskAssessmentContext))]
-    [Migration("20190515162218_InitialCreate")]
+    [Migration("20190517092235_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,8 +30,7 @@ namespace HumanRisksAssignment.Migrations
 
                     b.Property<double>("Longitude");
 
-                    b.Property<string>("Title")
-                        .IsRequired();
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 

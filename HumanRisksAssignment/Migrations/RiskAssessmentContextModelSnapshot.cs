@@ -28,8 +28,7 @@ namespace HumanRisksAssignment.Migrations
 
                     b.Property<double>("Longitude");
 
-                    b.Property<string>("Title")
-                        .IsRequired();
+                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 

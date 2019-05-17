@@ -9,9 +9,20 @@ namespace HumanRisksAssignment.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Using localdb for testing. TODO: Change connection string to dev of prod db.
+            // Using localdb for testing.
             optionsBuilder.UseSqlServer(
                 @"Server=(localdb)\mssqllocaldb;Database=RiskAssessmentsDB2;Integrated Security=True");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Threat>()
+                .HasOne(t => t.RiskAssessment)
+                .WithMany(ra => ra.Threats)
+                .HasForeignKey(t => t.RiskAssessmentId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<RiskAssessment>()
+                .HasKey(ra => ra.Id);
         }
 
         public DbSet<RiskAssessment> RiskAssessments { get; set; }

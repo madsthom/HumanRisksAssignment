@@ -71,35 +71,35 @@ namespace HumanRisksAssignment.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f494a1b1-aac9-411a-8ba4-a673828854b0"),
+                            Id = new Guid("8f2f4c20-a879-4928-b20f-5df458cd9537"),
                             Level = 0,
                             RiskAssessmentId = new Guid("fddce38a-25cc-45d2-b4a0-1a9bae75fa7f"),
                             Title = "Some threat"
                         },
                         new
                         {
-                            Id = new Guid("6213d44f-57b9-4e57-883e-c041b6cde84d"),
-                            Level = 2,
+                            Id = new Guid("7ade31c9-f01d-4911-883b-b267bf28ad73"),
+                            Level = 1,
                             RiskAssessmentId = new Guid("fddce38a-25cc-45d2-b4a0-1a9bae75fa7f"),
                             Title = "Some other threat"
                         },
                         new
                         {
-                            Id = new Guid("97f497eb-d909-42a2-b67c-8074c7f88491"),
+                            Id = new Guid("4659c06b-e658-49bf-888a-2c557ef90deb"),
                             Level = 2,
                             RiskAssessmentId = new Guid("fddce38a-25cc-45d2-b4a0-1a9bae75fa7f"),
                             Title = "This is a threat"
                         },
                         new
                         {
-                            Id = new Guid("f3a0920a-c5c6-4655-bc61-f25faaa5770f"),
-                            Level = 1,
+                            Id = new Guid("f30241a5-8891-470c-a18e-07bbb42af44d"),
+                            Level = 0,
                             RiskAssessmentId = new Guid("32ca327a-8fee-44f4-9401-2304ca6b55ad"),
                             Title = "Some failure threat"
                         },
                         new
                         {
-                            Id = new Guid("390a5ad4-80ff-492f-9565-04883f9c80bc"),
+                            Id = new Guid("ad359c38-932c-4564-993c-45b8b098cbe1"),
                             Level = 1,
                             RiskAssessmentId = new Guid("32ca327a-8fee-44f4-9401-2304ca6b55ad"),
                             Title = "Some unknown threat"

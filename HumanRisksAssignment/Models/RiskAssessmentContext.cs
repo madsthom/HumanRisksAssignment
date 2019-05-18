@@ -15,12 +15,14 @@ namespace HumanRisksAssignment.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /*
+             * RiskAssessment "one-to-many" Threats
+             */
             modelBuilder.Entity<Threat>()
                 .HasOne(t => t.RiskAssessment)
                 .WithMany(ra => ra.Threats)
                 .HasForeignKey(t => t.RiskAssessmentId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();
+                .OnDelete(DeleteBehavior.Cascade); // If RiskAssessment is deleted delete its Threats
 
             modelBuilder.Entity<RiskAssessment>()
                 .HasKey(ra => ra.Id);
@@ -56,7 +58,7 @@ namespace HumanRisksAssignment.Models
                     {
                         Id = Guid.NewGuid(),
                         Title = "Some other threat",
-                        Level = 2,
+                        Level = 1,
                         RiskAssessmentId = Guid.Parse("fddce38a-25cc-45d2-b4a0-1a9bae75fa7f")
                     },
                     new Threat
@@ -70,7 +72,7 @@ namespace HumanRisksAssignment.Models
                     {
                         Id = Guid.NewGuid(),
                         Title = "Some failure threat",
-                        Level = 1,
+                        Level = 0,
                         RiskAssessmentId = Guid.Parse("32ca327a-8fee-44f4-9401-2304ca6b55ad")
                     },
                     new Threat

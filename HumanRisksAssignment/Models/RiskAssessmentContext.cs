@@ -9,7 +9,7 @@ namespace HumanRisksAssignment.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Using localdb for testing.
+            // Using MSSQL localdb for testing.
             optionsBuilder.UseSqlServer(
                 @"Server=(localdb)\mssqllocaldb;Database=RiskAssessmentsDB2;Integrated Security=True");
         }

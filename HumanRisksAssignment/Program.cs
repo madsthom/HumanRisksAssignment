@@ -3,8 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace HumanRisksAssignment
 {
